@@ -5,6 +5,11 @@
     <title>欠席数確認システム（画面切り替え）</title>
 
     <style>
+        /* ログイン後のページがタイトルに重ならないように余白を追加 */
+#class-page, 
+#comment-page {
+    margin-top: 100px;   /* ← タイトルの高さに合わせて調整 */
+}
  /* タイトルを左上に固定し、青色を復活 */
 h2 {
     color: #2a6fdb;        /* ← 青色を明示的に指定 */
@@ -304,5 +309,6 @@ function goLogin() {
 
 </body>
 </html>
+
 
 
