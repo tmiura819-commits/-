@@ -1,0 +1,602 @@
+[
+  {
+    "id": "S001",
+    "name": "佐藤 大輝",
+    "email": "S001@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S002",
+    "name": "鈴木 彩花",
+    "email": "S002@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S003",
+    "name": "高橋 悠斗",
+    "email": "S003@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S004",
+    "name": "田中 美咲",
+    "email": "S004@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S005",
+    "name": "伊藤 陸",
+    "email": "S005@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 0 }
+  },
+  {
+    "id": "S006",
+    "name": "渡辺 花音",
+    "email": "S006@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S007",
+    "name": "山本 翔太",
+    "email": "S007@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S008",
+    "name": "中村 優奈",
+    "email": "S008@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S009",
+    "name": "小林 海斗",
+    "email": "S009@example.com",
+    "absences": { "computing": 0, "media": 2, "society": 0 }
+  },
+  {
+    "id": "S010",
+    "name": "加藤 心結",
+    "email": "S010@example.com",
+    "absences": { "computing": 3, "media": 1, "society": 2 }
+  },
+  {
+    "id": "S011",
+    "name": "吉田 晴斗",
+    "email": "S011@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 0 }
+  },
+  {
+    "id": "S012",
+    "name": "山田 美月",
+    "email": "S012@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 1 }
+  },
+  {
+    "id": "S013",
+    "name": "佐々木 蒼",
+    "email": "S013@example.com",
+    "absences": { "computing": 2, "media": 2, "society": 0 }
+  },
+  {
+    "id": "S014",
+    "name": "山口 さくら",
+    "email": "S014@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S015",
+    "name": "松本 大和",
+    "email": "S015@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S016",
+    "name": "井上 結衣",
+    "email": "S016@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 1 }
+  },
+  {
+    "id": "S017",
+    "name": "木村 陽翔",
+    "email": "S017@example.com",
+    "absences": { "computing": 0, "media": 2, "society": 0 }
+  },
+  {
+    "id": "S018",
+    "name": "林 咲良",
+    "email": "S018@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 2 }
+  },
+  {
+    "id": "S019",
+    "name": "清水 琉生",
+    "email": "S019@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S020",
+    "name": "斎藤 愛莉",
+    "email": "S020@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S021",
+    "name": "森 颯太",
+    "email": "S021@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 2 }
+  },
+  {
+    "id": "S022",
+    "name": "池田 菜々",
+    "email": "S022@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S023",
+    "name": "橋本 陽斗",
+    "email": "S023@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S024",
+    "name": "阿部 美羽",
+    "email": "S024@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S025",
+    "name": "石川 悠真",
+    "email": "S025@example.com",
+    "absences": { "computing": 0, "media": 2, "society": 0 }
+  },
+  {
+    "id": "S026",
+    "name": "山崎 ひなた",
+    "email": "S026@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 2 }
+  },
+  {
+    "id": "S027",
+    "name": "村上 晴",
+    "email": "S027@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S028",
+    "name": "森田 結菜",
+    "email": "S028@example.com",
+    "absences": { "computing": 3, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S029",
+    "name": "長谷川 蒼空",
+    "email": "S029@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S030",
+    "name": "近藤 莉子",
+    "email": "S030@example.com",
+    "absences": { "computing": 0, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S031",
+    "name": "石井 陽向",
+    "email": "S031@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 2 }
+  },
+  {
+    "id": "S032",
+    "name": "坂本 心春",
+    "email": "S032@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S033",
+    "name": "遠藤 大智",
+    "email": "S033@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S034",
+    "name": "青木 美玲",
+    "email": "S034@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S035",
+    "name": "藤田 琉斗",
+    "email": "S035@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S036",
+    "name": "西村 愛",
+    "email": "S036@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S037",
+    "name": "福田 陽菜",
+    "email": "S037@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S038",
+    "name": "太田 悠生",
+    "email": "S038@example.com",
+    "absences": { "computing": 0, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S039",
+    "name": "三浦 結月",
+    "email": "S039@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S040",
+    "name": "岡田 大翔",
+    "email": "S040@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S041",
+    "name": "中川 心音",
+    "email": "S041@example.com",
+    "absences": { "computing": 2, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S042",
+    "name": "前田 陽葵",
+    "email": "S042@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S043",
+    "name": "藤井 颯真",
+    "email": "S043@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S044",
+    "name": "後藤 美咲",
+    "email": "S044@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S045",
+    "name": "岡本 陸斗",
+    "email": "S045@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S046",
+    "name": "村田 さくら",
+    "email": "S046@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 2 }
+  },
+  {
+    "id": "S047",
+    "name": "高木 悠真",
+    "email": "S047@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S048",
+    "name": "安藤 心結",
+    "email": "S048@example.com",
+    "absences": { "computing": 0, "media": 2, "society": 0 }
+  },
+  {
+    "id": "S049",
+    "name": "新井 蒼大",
+    "email": "S049@example.com",
+    "absences": { "computing": 3, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S050",
+    "name": "中島 美羽",
+    "email": "S050@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S051",
+    "name": "小松 陽斗",
+    "email": "S051@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S052",
+    "name": "平野 結衣",
+    "email": "S052@example.com",
+    "absences": { "computing": 2, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S053",
+    "name": "竹内 大智",
+    "email": "S053@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S054",
+    "name": "金子 咲良",
+    "email": "S054@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S055",
+    "name": "和田 陽向",
+    "email": "S055@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S056",
+    "name": "菅原 美月",
+    "email": "S056@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S057",
+    "name": "小野 琉生",
+    "email": "S057@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S058",
+    "name": "田村 心春",
+    "email": "S058@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S059",
+    "name": "杉山 大和",
+    "email": "S059@example.com",
+    "absences": { "computing": 0, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S060",
+    "name": "大野 愛莉",
+    "email": "S060@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S061",
+    "name": "松田 陽翔",
+    "email": "S061@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S062",
+    "name": "浜田 美玲",
+    "email": "S062@example.com",
+    "absences": { "computing": 2, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S063",
+    "name": "上田 悠斗",
+    "email": "S063@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S064",
+    "name": "吉川 心音",
+    "email": "S064@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S065",
+    "name": "武田 大輝",
+    "email": "S065@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S066",
+    "name": "原田 美咲",
+    "email": "S066@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S067",
+    "name": "中西 陽斗",
+    "email": "S067@example.com",
+    "absences": { "computing": 3, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S068",
+    "name": "松井 結菜",
+    "email": "S068@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S069",
+    "name": "市川 悠生",
+    "email": "S069@example.com",
+    "absences": { "computing": 0, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S070",
+    "name": "大谷 心結",
+    "email": "S070@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 2 }
+  },
+  {
+    "id": "S071",
+    "name": "久保 大智",
+    "email": "S071@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S072",
+    "name": "野口 美羽",
+    "email": "S072@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S073",
+    "name": "黒田 陽向",
+    "email": "S073@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S074",
+    "name": "川口 咲良",
+    "email": "S074@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S075",
+    "name": "平井 悠真",
+    "email": "S075@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S076",
+    "name": "大西 心音",
+    "email": "S076@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S077",
+    "name": "永井 陽翔",
+    "email": "S077@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S078",
+    "name": "白石 美月",
+    "email": "S078@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S079",
+    "name": "秋山 大和",
+    "email": "S079@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S080",
+    "name": "小池 結衣",
+    "email": "S080@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S081",
+    "name": "松浦 陽斗",
+    "email": "S081@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S082",
+    "name": "岩田 心春",
+    "email": "S082@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S083",
+    "name": "大竹 悠生",
+    "email": "S083@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S084",
+    "name": "吉岡 美玲",
+    "email": "S084@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S085",
+    "name": "中田 陽向",
+    "email": "S085@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S086",
+    "name": "河野 結菜",
+    "email": "S086@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S087",
+    "name": "藤原 大智",
+    "email": "S087@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S088",
+    "name": "青山 心結",
+    "email": "S088@example.com",
+    "absences": { "computing": 3, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S089",
+    "name": "西田 陽翔",
+    "email": "S089@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 1 }
+  },
+  {
+    "id": "S090",
+    "name": "久保田 美咲",
+    "email": "S090@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S091",
+    "name": "甲斐 悠斗",
+    "email": "S091@example.com",
+    "absences": { "computing": 2, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S092",
+    "name": "荒木 心音",
+    "email": "S092@example.com",
+    "absences": { "computing": 1, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S093",
+    "name": "大森 陽斗",
+    "email": "S093@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S094",
+    "name": "黒川 美羽",
+    "email": "S094@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S095",
+    "name": "宮本 大和",
+    "email": "S095@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 2 }
+  },
+  {
+    "id": "S096",
+    "name": "前川 結衣",
+    "email": "S096@example.com",
+    "absences": { "computing": 2, "media": 1, "society": 3 }
+  },
+  {
+    "id": "S097",
+    "name": "高田 陽翔",
+    "email": "S097@example.com",
+    "absences": { "computing": 1, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S098",
+    "name": "吉野 美月",
+    "email": "S098@example.com",
+    "absences": { "computing": 0, "media": 1, "society": 0 }
+  },
+  {
+    "id": "S099",
+    "name": "奥田 悠生",
+    "email": "S099@example.com",
+    "absences": { "computing": 1, "media": 2, "society": 1 }
+  },
+  {
+    "id": "S100",
+    "name": "宮崎 心結",
+    "email": "S100@example.com",
+    "absences": { "computing": 0, "media": 0, "society": 2 }
+  }
+]

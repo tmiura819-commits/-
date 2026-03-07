@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>欠席数確認システム（画面切り替え）</title>
+
+    <style>
+        body {
+            font-family: "Noto Sans JP", sans-serif;
+            background: #f5f9ff;
+            color: #333;
+            margin: 40px;
+        }
+
+        h2, h3 {
+            color: #2a6fdb;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        /* ページ切り替え（元の機能を維持） */
+        .page {
+            display: none;
+        }
+
+        /* 共通ボックス（ログイン・授業一覧・コメント） */
+        .box {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 380px;
+            margin-bottom: 20px;
+        }
+
+        /* 入力欄（アプリ風） */
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #c7d7f5;
+            border-radius: 8px;
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
+        /* ボタン（青・アプリ風） */
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2a6fdb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin-top: 14px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #1e4fa3;
+        }
+
+        /* 授業一覧のボタン（シンプル・見やすい） */
+     /* 授業一覧のボタン（見やすく改善版） */
+#class-list button {
+    background: #eaf2ff;          /* 淡い青で視認性UP */
+    border: 1px solid #8fb3ff;    /* 少し濃い青の枠線 */
+    color: #1e4fa3;               /* 文字色を濃い青に */
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+#class-list button:hover {
+    background: #d6e6ff;          /* ホバー時に濃くして強調 */
+    border-color: #2a6fdb;
+    color: #0f3a85;
+}
+
+        /* コメントの色分け（わかりやすさ重視） */
+        .comment-safe {
+            background: #e8ffe8;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .comment-warning {
+            background: #fff8d6;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .comment-danger {
+            background: #ffe8e8;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* コメントの改行保持（元の機能を維持） */
+        #comment-text {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>欠席数確認システム</h2>
+
+<!-- ① ログイン画面 -->
+<div id="login-page" class="page" style="display:block;">
+    <div class="box">
+        <label>ID：</label>
+        <input type="text" id="login-id" placeholder="例：S001">
+
+        <label>パスワード：</label>
+        <input type="password" id="login-password" placeholder="例：pass001">
+
+        <button onclick="login()">ログイン</button>
+        <div id="login-message" style="margin-top:10px;color:#c00;"></div>
+    </div>
+</div>
+
+<!-- ② 授業一覧画面 -->
+<div id="class-page" class="page">
+    <div class="box">
+        <div id="student-info"></div>
+
+        <h3>履修している授業</h3>
+        <div id="class-list"></div>
+
+        <button onclick="goLogin()">ログアウト</button>
+    </div>
+</div>
+
+<!-- ③ コメント表示画面 -->
+<div id="comment-page" class="page">
+    <div class="box">
+        <h3 id="comment-title"></h3>
+        <div id="comment-text"></div>
+
+        <button onclick="backToClasses()">授業一覧に戻る</button>
+        <button onclick="goLogin()">ログアウト</button>
+    </div>
+</div>
+
+<script>
+fetch("https://example.com/students.json")
+fetch("https://example.com/accounts.json")
+/* -------------------------
+   外部 JSON 読み込み
+------------------------- */
+let students = [];
+let accounts = [];
+
+async function loadData() {
+    try {
+        const s = await fetch("students.json");
+        students = await s.json();
+
+        const a = await fetch("accounts.json");
+        accounts = await a.json();
+
+        console.log("JSON読み込み完了");
+    } catch (error) {
+        console.error("JSON読み込みエラー:", error);
+    }
+}
+
+window.onload = loadData;
+
+/* -------------------------
+   欠席コメント生成
+------------------------- */
+function absencesTxt(className, count) {
+    let base = `${className} の欠席数は現在 ${count} です！\n\n`;
+    let msg = "";
+
+    switch (count) {
+        case 0:
+            msg = "素晴らしいですね！\nただ体調には気を付けて！";
+            break;
+        case 1:
+            msg = "良い調子ですね！このまま油断せずに行きましょう！";
+            break;
+        case 2:
+            msg = "気を付けて！あと一回欠席すると危険です。";
+            break;
+        case 3:
+            msg = "これ以上欠席はできません！必ず担当教員に相談を。";
+            break;
+        case 4:
+            msg = "単位取得が難しい可能性があります。担当教員に相談してください。";
+            break;
+        default:
+            msg = "データにない欠席数です。";
+    }
+
+    return base + msg;
+}
+
+/* -------------------------
+   画面切り替え
+------------------------- */
+function showPage(id) {
+    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+    document.getElementById(id).style.display = "block";
+}
+
+/* -------------------------
+   ログイン処理
+------------------------- */
+let currentStudent = null;
+
+function login() {
+    const id = document.getElementById("login-id").value.trim();
+    const pw = document.getElementById("login-password").value.trim();
+    const msg = document.getElementById("login-message");
+
+    msg.textContent = "";
+
+    const account = accounts.find(a => a.id === id && a.password === pw);
+    if (!account) {
+        msg.textContent = "ID またはパスワードが正しくありません。";
+        return;
+    }
+
+    const student = students.find(s => s.id === id);
+    if (!student) {
+        msg.textContent = "学生データが見つかりません。";
+        return;
+    }
+
+    currentStudent = student;
+    loadClassPage();
+    showPage("class-page");
+}
+
+/* -------------------------
+   授業一覧ページ
+------------------------- */
+function loadClassPage() {
+    document.getElementById("student-info").textContent =
+        `${currentStudent.name} さん（ID: ${currentStudent.id}）`;
+
+    const classList = document.getElementById("class-list");
+    classList.innerHTML = "";
+
+    Object.keys(currentStudent.absences).forEach(cls => {
+        const btn = document.createElement("button");
+        btn.textContent = cls;
+        btn.onclick = () => showCommentPage(cls);
+        classList.appendChild(btn);
+    });
+}
+
+/* -------------------------
+   コメントページ
+------------------------- */
+function showCommentPage(className) {
+    const count = currentStudent.absences[className];
+    const message = absencesTxt(className, count);
+
+    document.getElementById("comment-title").textContent =
+        `${currentStudent.name} さんの ${className}`;
+
+    const commentBox = document.getElementById("comment-text");
+    commentBox.textContent = message;
+
+    // コメント色分け（完全版）
+    commentBox.className = "";
+    if (count === 0) commentBox.classList.add("comment-safe");
+    else if (count === 1 || count === 2) commentBox.classList.add("comment-warning");
+    else if (count >= 3) commentBox.classList.add("comment-danger");
+
+    showPage("comment-page");
+}
+
+/* -------------------------
+   戻る・ログアウト
+------------------------- */
+function backToClasses() {
+    showPage("class-page");
+}
+
+function goLogin() {
+    currentStudent = null;
+    document.getElementById("login-id").value = "";
+    document.getElementById("login-password").value = "";
+    showPage("login-page");
+}
+</script>
+
+</body>
+</html>
