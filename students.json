@@ -3,7 +3,7 @@
     "id": "S001",
     "name": "佐藤 大輝",
     "email": "S001@example.com",
-    "absences": { "computing": 0, "media": 1, "society": 0 }
+    "absences": { "computing": 5, "media": 1, "society": 4 }
   },
   {
     "id": "S002",
@@ -599,4 +599,5 @@
     "email": "S100@example.com",
     "absences": { "computing": 0, "media": 0, "society": 2 }
   }
+
 ]
