@@ -111,7 +111,12 @@ h2 {
             border-radius: 8px;
             margin-top: 10px;
         }
-
+        .comment-danger-strong {
+            background: #ffb3b3;   /* 濃い赤 */
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+}
         /* コメントの改行保持（元の機能を維持） */
         #comment-text {
             white-space: pre-wrap;
@@ -285,11 +290,11 @@ function showCommentPage(className) {
     commentBox.textContent = message;
 
     // コメント色分け（完全版）
-    commentBox.className = "";
-    if (count === 0) commentBox.classList.add("comment-safe");
-    else if (count === 1 || count === 2) commentBox.classList.add("comment-warning");
-    else if (count >= 3) commentBox.classList.add("comment-danger");
-
+commentBox.className = "";
+if (count === 0) commentBox.classList.add("comment-safe");
+else if (count === 1 || count === 2) commentBox.classList.add("comment-warning");
+else if (count == 3) commentBox.classList.add("comment-danger");
+else if (count >= 4) commentBox.classList.add("comment-danger-strong");  // ← 修正済み
     showPage("comment-page");
 }
 
@@ -310,6 +315,7 @@ function goLogin() {
 
 </body>
 </html>
+
 
 
 
