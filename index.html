@@ -5,35 +5,22 @@
     <title>欠席数確認システム（画面切り替え）</title>
 
     <style>
-        /* 画面全体を中央寄せにする */
-body {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background: #f5f9ff;
+ /* タイトルを左上に固定し、青色を復活 */
+h2 {
+    color: #2a6fdb;        /* ← 青色を明示的に指定 */
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    position: absolute;    /* ← 固定配置にする */
+    top: 20px;
+    left: 20px;
 }
 
-/* ページごとのコンテンツを中央にまとめる */
-.page {
-    width: 100%;
-    max-width: 420px;   /* .box の幅に合わせて自然に中央揃え */
-    display: none;
-    margin: 0 auto;
-}
-        body {
-            font-family: "Noto Sans JP", sans-serif;
-            background: #f5f9ff;
-            color: #333;
-            margin: 40px;
-        }
-
-        h2, h3 {
-            color: #2a6fdb;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        /* ページ切り替え（元の機能を維持） */
+/* ログインページのボックスをタイトルの右下に配置 */
+#login-page .box {
+    margin-top: 80px;      /* タイトルの下に余白を作る */
+    margin-left: 200px;    /* タイトルの右側に移動させる */
+}        /* ページ切り替え（元の機能を維持） */
         .page {
             display: none;
         }
@@ -123,6 +110,7 @@ body {
         #comment-text {
             white-space: pre-wrap;
         }
+
     </style>
 </head>
 
@@ -316,4 +304,5 @@ function goLogin() {
 
 </body>
 </html>
+
 
