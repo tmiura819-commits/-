@@ -128,7 +128,7 @@
         }
 
         /* -------------------------
-           ログイン画面：ロボット追加
+           ログイン画面：ロボット
         ------------------------- */
         .login-wrapper {
             display: flex;
@@ -137,9 +137,24 @@
         }
 
         .login-robot {
-            width: 240px;
+            width: 520px;
             height: auto;
-            margin-top: 80px;
+            margin-top: 40px;
+        }
+
+        /* -------------------------
+           コメント画面：ロボット
+        ------------------------- */
+        .comment-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .comment-robot {
+            width: 520px;
+            height: auto;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -185,12 +200,19 @@
 
 <!-- ③ コメント表示画面 -->
 <div id="comment-page" class="page">
-    <div class="box">
-        <h3 id="comment-title"></h3>
-        <div id="comment-text"></div>
+    <div class="box comment-wrapper">
 
-        <button onclick="backToClasses()">授業一覧に戻る</button>
-        <button onclick="goLogin()">ログアウト</button>
+        <div class="comment-left">
+            <h3 id="comment-title"></h3>
+            <div id="comment-text"></div>
+
+            <button onclick="backToClasses()">授業一覧に戻る</button>
+            <button onclick="goLogin()">ログアウト</button>
+        </div>
+
+        <!-- 欠席数に応じて変わるロボット画像 -->
+        <img id="comment-robot" src="normal.png" class="comment-robot" alt="robot">
+
     </div>
 </div>
 
@@ -270,18 +292,18 @@ function login() {
     const account = accounts.find(a => a.id === id && a.password === pw);
     if (!account) {
         msg.textContent = "ID またはパスワードが正しくありません。";
-        document.getElementById("robot-img").src = "fail.png";  // ★ 失敗時の画像
+        document.getElementById("robot-img").src = "fail.png";
         return;
     }
 
     const student = students.find(s => s.id === id);
     if (!student) {
         msg.textContent = "学生データが見つかりません。";
-        document.getElementById("robot-img").src = "fail.png";  // ★ 失敗時の画像
+        document.getElementById("robot-img").src = "fail.png";
         return;
     }
 
-    document.getElementById("robot-img").src = "nomal.png";  // ★ 成功時に戻す
+    document.getElementById("robot-img").src = "nomal.png";
 
     currentStudent = student;
     loadClassPage();
@@ -319,11 +341,23 @@ function showCommentPage(className) {
     const commentBox = document.getElementById("comment-text");
     commentBox.textContent = message;
 
+    /* コメント背景色 */
     commentBox.className = "";
-    if (count === 0) commentBox.classList.add("comment-safe");
-    else if (count === 1 || count === 2) commentBox.classList.add("comment-warning");
+    if (count <= 1) commentBox.classList.add("comment-safe");
+    else if (count <= 3) commentBox.classList.add("comment-warning");
     else if (count == 3) commentBox.classList.add("comment-danger");
     else if (count >= 4) commentBox.classList.add("comment-danger-strong");
+
+    /* 欠席数に応じてロボット画像を切り替え */
+    const robot = document.getElementById("comment-robot");
+
+    if (count <= 1) {
+        robot.src = "smile.png";
+    } else if (count <= 3) {
+        robot.src = "normal.png";
+    } else {
+        robot.src = "sad.png";
+    }
 
     showPage("comment-page");
 }
@@ -339,15 +373,11 @@ function goLogin() {
     currentStudent = null;
     document.getElementById("login-id").value = "";
     document.getElementById("login-password").value = "";
-    document.getElementById("robot-img").src = "nomal.png";  // ★ ログアウト時も戻す
+    document.getElementById("robot-img").src = "nomal.png";
     showPage("login-page");
 }
 </script>
 
 </body>
 </html>
-
-
-
-
 
