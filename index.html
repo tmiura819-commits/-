@@ -10,7 +10,7 @@
         ------------------------- */
         #class-page,
         #comment-page {
-            margin-top: 100px; /* タイトルと重ならないように余白 */
+            margin-top: 100px;
         }
 
         /* タイトル固定 */
@@ -126,6 +126,21 @@
         #comment-text {
             white-space: pre-wrap;
         }
+
+        /* -------------------------
+           ログイン画面：ロボット追加
+        ------------------------- */
+        .login-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .login-robot {
+            width: 240px;
+            height: auto;
+            margin-top: 80px;
+        }
     </style>
 </head>
 
@@ -135,15 +150,24 @@
 
 <!-- ① ログイン画面 -->
 <div id="login-page" class="page" style="display:block;">
-    <div class="box">
-        <label>ID：</label>
-        <input type="text" id="login-id" placeholder="例：S001">
 
-        <label>パスワード：</label>
-        <input type="password" id="login-password" placeholder="例：pass001">
+    <div class="login-wrapper">
 
-        <button onclick="login()">ログイン</button>
-        <div id="login-message" style="margin-top:10px;color:#c00;"></div>
+        <!-- 入力欄（左側） -->
+        <div class="box">
+            <label>ID：</label>
+            <input type="text" id="login-id" placeholder="例：S001">
+
+            <label>パスワード：</label>
+            <input type="password" id="login-password" placeholder="例：pass001">
+
+            <button onclick="login()">ログイン</button>
+            <div id="login-message" style="margin-top:10px;color:#c00;"></div>
+        </div>
+
+        <!-- ロボット画像（右側） -->
+        <img id="robot-img" src="nomal.png" class="login-robot" alt="robot">
+
     </div>
 </div>
 
@@ -246,14 +270,18 @@ function login() {
     const account = accounts.find(a => a.id === id && a.password === pw);
     if (!account) {
         msg.textContent = "ID またはパスワードが正しくありません。";
+        document.getElementById("robot-img").src = "fail.png";  // ★ 失敗時の画像
         return;
     }
 
     const student = students.find(s => s.id === id);
     if (!student) {
         msg.textContent = "学生データが見つかりません。";
+        document.getElementById("robot-img").src = "fail.png";  // ★ 失敗時の画像
         return;
     }
+
+    document.getElementById("robot-img").src = "nomal.png";  // ★ 成功時に戻す
 
     currentStudent = student;
     loadClassPage();
@@ -311,6 +339,7 @@ function goLogin() {
     currentStudent = null;
     document.getElementById("login-id").value = "";
     document.getElementById("login-password").value = "";
+    document.getElementById("robot-img").src = "nomal.png";  // ★ ログアウト時も戻す
     showPage("login-page");
 }
 </script>
