@@ -5,33 +5,37 @@
     <title>欠席数確認システム（画面切り替え）</title>
 
     <style>
-        /* ログイン後のページがタイトルに重ならないように余白を追加 */
-#class-page, 
-#comment-page {
-    margin-top: 100px;   /* ← タイトルの高さに合わせて調整 */
-}
+        /* -------------------------
+           レイアウト調整
+        ------------------------- */
+        #class-page,
+        #comment-page {
+            margin-top: 100px; /* タイトルと重ならないように余白 */
+        }
 
- /* タイトルを左上に固定し、青色を復活 */
-h2 {
-    color: #2a6fdb;        /* ← 青色を明示的に指定 */
-    font-weight: 600;
-    margin: 0;
-    padding: 0;
-    position: absolute;    /* ← 固定配置にする */
-    top: 20px;
-    left: 20px;
-}
+        /* タイトル固定 */
+        h2 {
+            color: #2a6fdb;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
 
-/* ログインページのボックスをタイトルの右下に配置 */
-#login-page .box {
-    margin-top: 80px;      /* タイトルの下に余白を作る */
-    margin-left: 200px;    /* タイトルの右側に移動させる */
-}        /* ページ切り替え（元の機能を維持） */
+        /* ログインボックス位置調整 */
+        #login-page .box {
+            margin-top: 80px;
+            margin-left: 200px;
+        }
+
+        /* ページ切り替え */
         .page {
             display: none;
         }
 
-        /* 共通ボックス（ログイン・授業一覧・コメント） */
+        /* 共通ボックス */
         .box {
             background: #ffffff;
             padding: 24px;
@@ -41,7 +45,7 @@ h2 {
             margin-bottom: 20px;
         }
 
-        /* 入力欄（アプリ風） */
+        /* 入力欄 */
         input {
             width: 100%;
             padding: 10px;
@@ -51,7 +55,7 @@ h2 {
             font-size: 15px;
         }
 
-        /* ボタン（青・アプリ風） */
+        /* ボタン */
         button {
             width: 100%;
             padding: 12px;
@@ -69,28 +73,27 @@ h2 {
             background: #1e4fa3;
         }
 
-        /* 授業一覧のボタン（シンプル・見やすい） */
-     /* 授業一覧のボタン（見やすく改善版） */
-#class-list button {
-    background: #eaf2ff;          /* 淡い青で視認性UP */
-    border: 1px solid #8fb3ff;    /* 少し濃い青の枠線 */
-    color: #1e4fa3;               /* 文字色を濃い青に */
-    padding: 12px;
-    border-radius: 8px;
-    margin-top: 10px;
-    text-align: left;
-    font-size: 16px;
-    font-weight: 500;
-    transition: 0.2s;
-}
+        /* 授業一覧ボタン */
+        #class-list button {
+            background: #eaf2ff;
+            border: 1px solid #8fb3ff;
+            color: #1e4fa3;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
 
-#class-list button:hover {
-    background: #d6e6ff;          /* ホバー時に濃くして強調 */
-    border-color: #2a6fdb;
-    color: #0f3a85;
-}
+        #class-list button:hover {
+            background: #d6e6ff;
+            border-color: #2a6fdb;
+            color: #0f3a85;
+        }
 
-        /* コメントの色分け（わかりやすさ重視） */
+        /* コメント色分け */
         .comment-safe {
             background: #e8ffe8;
             padding: 10px;
@@ -111,17 +114,18 @@ h2 {
             border-radius: 8px;
             margin-top: 10px;
         }
+
         .comment-danger-strong {
-            background: #ffb3b3;   /* 濃い赤 */
+            background: #ffb3b3;
             padding: 10px;
             border-radius: 8px;
             margin-top: 10px;
-}
-        /* コメントの改行保持（元の機能を維持） */
+        }
+
+        /* コメント改行保持 */
         #comment-text {
             white-space: pre-wrap;
         }
-
     </style>
 </head>
 
@@ -167,8 +171,6 @@ h2 {
 </div>
 
 <script>
-fetch("https://example.com/students.json")
-fetch("https://example.com/accounts.json")
 /* -------------------------
    外部 JSON 読み込み
 ------------------------- */
@@ -289,12 +291,12 @@ function showCommentPage(className) {
     const commentBox = document.getElementById("comment-text");
     commentBox.textContent = message;
 
-    // コメント色分け（完全版）
-commentBox.className = "";
-if (count === 0) commentBox.classList.add("comment-safe");
-else if (count === 1 || count === 2) commentBox.classList.add("comment-warning");
-else if (count == 3) commentBox.classList.add("comment-danger");
-else if (count >= 4) commentBox.classList.add("comment-danger-strong");  // ← 修正済み
+    commentBox.className = "";
+    if (count === 0) commentBox.classList.add("comment-safe");
+    else if (count === 1 || count === 2) commentBox.classList.add("comment-warning");
+    else if (count == 3) commentBox.classList.add("comment-danger");
+    else if (count >= 4) commentBox.classList.add("comment-danger-strong");
+
     showPage("comment-page");
 }
 
@@ -315,7 +317,6 @@ function goLogin() {
 
 </body>
 </html>
-
 
 
 
