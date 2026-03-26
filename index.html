@@ -198,7 +198,7 @@
         </div>
 
         <!-- ロボット画像（右側） -->
-        <img id="robot-img" src="nomal.png" class="login-robot" alt="robot">
+        <img id="robot-img" src="normal.png" class="login-robot" alt="robot">
 
     </div>
 </div>
@@ -328,7 +328,7 @@ function login() {
         return;
     }
 
-    document.getElementById("robot-img").src = "nomal.png";
+    document.getElementById("robot-img").src = "normal.png";
 
     currentStudent = student;
     loadClassPage();
@@ -398,7 +398,7 @@ function goLogin() {
     currentStudent = null;
     document.getElementById("login-id").value = "";
     document.getElementById("login-password").value = "";
-    document.getElementById("robot-img").src = "nomal.png";
+    document.getElementById("robot-img").src = "normal.png";
     showPage("login-page");
 }
 </script>
