@@ -205,13 +205,21 @@
 
 <!-- ② 授業一覧画面 -->
 <div id="class-page" class="page">
-    <div class="box">
-        <div id="student-info"></div>
+    <div class="class-wrapper">
 
-        <h3>履修している授業</h3>
-        <div id="class-list"></div>
+        <!-- 左側：授業一覧 -->
+        <div class="box">
+            <div id="student-info"></div>
 
-        <button onclick="goLogin()">ログアウト</button>
+            <h3>履修している授業</h3>
+            <div id="class-list"></div>
+
+            <button onclick="goLogin()">ログアウト</button>
+        </div>
+
+        <!-- 右側：ロボット画像 -->
+        <img src="normal.png" class="class-robot" alt="robot">
+
     </div>
 </div>
 
